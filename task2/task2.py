@@ -16,9 +16,9 @@ def read_points_data(filename):
     return points
 
 
-def point_position(circle, dot):
+def point_position(circle, point):
     cx, cy, radius = circle
-    px, py = dot
+    px, py = point
     distance_squared = (px - cx) ** 2 + (py - cy) ** 2
     radius_squared = radius ** 2
 
@@ -30,7 +30,7 @@ def point_position(circle, dot):
         return 2  # точка снаружи
 
 
-def main(circle_file, dot_file):
+def main(circle_file, points_file):
     circle = read_circle_data(circle_file)
     points = read_points_data(points_file)
 
@@ -41,7 +41,7 @@ def main(circle_file, dot_file):
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print("Usage: python script.py <circle_file> <points_file>")
+        print("Использование: python task2.py circle_file.txt points_file.txt")
         sys.exit(1)
 
     circle_file = sys.argv[1]
